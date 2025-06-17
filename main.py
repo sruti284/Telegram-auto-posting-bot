@@ -5,8 +5,8 @@ import os
 import json
 
 # ==== CONFIG ====
-api_id = 29666972
-api_hash = 'b690d5b50137aeb5da5bcd32b5f1dabe'
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
 
 SOURCE_CHANNELS = [
     'CKoffers',
@@ -77,6 +77,7 @@ async def handle_new_message(event):
             save_hashes()
 
         print("Message forwarded.")
+
     except Exception as e:
         print("Error:", e)
 
